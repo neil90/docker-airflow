@@ -31,4 +31,4 @@ dag = DAG(
     catchup=False
 )
 
-notebook_run = DatabricksRunNowOperator(task_id='sparkdbrtester', job_id=82, dag=dag)
+notebook_run = DatabricksRunNowOperator(task_id='sparkdbrtester', job_id=82, dag=dag, databricks_conn_id="databricks_myshard")

@@ -7,6 +7,11 @@ FILE = "docker-compose-LocalExecutor.yml"
 build:
 	docker-compose -f $(FILE)  build
 
+volumes:
+	@echo "Creating Volume Directories"
+	mkdir -p ./volumes/{postgres_data/airflow_data_dump/airflow_logs}
+
+
 up:
 	@echo "Starting $(TITLE)"
 	docker-compose -f $(FILE)  up -d
