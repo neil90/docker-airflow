@@ -17,6 +17,10 @@ services:
             - AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS=False
             - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
             - AIRFLOW__SCHEDULER__CATCHUP_BY_DEFAULT=False
+
+            - AIRFLOW__CORE__REMOTE_LOGGING=True
+            - AIRFLOW__CORE__REMOTE_BASE_LOG_FOLDER=s3://dbc-ae07f79c-e24f-random-bucket/airflow-logs
+            - AIRFLOW__CORE__REMOTE_LOG_CONN_ID=neil-aws-s3-account
         volumes:
             - ./dags:/opt/airflow/dags:z
             - ./plugins:/opt/airflow/plugins:z
