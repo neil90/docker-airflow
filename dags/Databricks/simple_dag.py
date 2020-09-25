@@ -31,4 +31,5 @@ dag = DAG(
     catchup=False
 )
 
-notebook_run = DatabricksRunNowOperator(task_id='sparkdbrtester', job_id=82, dag=dag, databricks_conn_id="databricks_myshard")
+notebook_run = DatabricksRunNowOperator(task_id='sparkdbrtester', 
+dag=dag, databricks_conn_id="databricks_myshard", job_id = 82,json = {"jar_params":["s3a://dbc-ae07f79c-e24f-random-bucket/tmp/delta-path-jar-params"]})
